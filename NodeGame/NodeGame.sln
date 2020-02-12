@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.29728.190
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NodeGame", "NodeGame\NodeGame.csproj", "{954A3D78-3074-4E46-AC7E-70DA7483E2D0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utility", "Utility\Utility.csproj", "{4B6E8770-EEC5-4BD6-B62B-7659190E9330}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utility", "Utility\Utility.csproj", "{0A7C9E86-24D6-4E5B-B514-CDC805701C5E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{954A3D78-3074-4E46-AC7E-70DA7483E2D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{954A3D78-3074-4E46-AC7E-70DA7483E2D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{954A3D78-3074-4E46-AC7E-70DA7483E2D0}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4B6E8770-EEC5-4BD6-B62B-7659190E9330}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4B6E8770-EEC5-4BD6-B62B-7659190E9330}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4B6E8770-EEC5-4BD6-B62B-7659190E9330}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4B6E8770-EEC5-4BD6-B62B-7659190E9330}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0A7C9E86-24D6-4E5B-B514-CDC805701C5E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A7C9E86-24D6-4E5B-B514-CDC805701C5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A7C9E86-24D6-4E5B-B514-CDC805701C5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A7C9E86-24D6-4E5B-B514-CDC805701C5E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
