@@ -1,0 +1,8 @@
+*.suo
+*.lock
+*.ide
+*.ide-shm
+*.ide-wal
+*.cs
+*.cache
+*.lref
