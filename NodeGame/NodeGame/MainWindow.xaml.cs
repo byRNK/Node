@@ -29,7 +29,7 @@ namespace NodeGame
             _manager = new NodeManager();
             var nodeList = _manager.ReadFromFile();
 
-            var model = new Model();
+            var model = new Model(nodeList);
         }
     }
 }
