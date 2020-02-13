@@ -5,41 +5,70 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace NodeGame.Node
 {
-    public class NodeManager
+    internal class NodeManager
     {
-        private Node _node;
-
         public NodeManager()
         {
-            _node = new Node();
+            var newList = ReadFromFile();
 
-            _node.DummySet();
+            if (newList != null &&
+                newList.Count != 0)
+            {
+                MessageBox.Show($"newlist sayısı: {newList.Count}");
+            }
 
-            var a = JsonConvert.SerializeObject(_node);
+        }
+
+        internal List<Node> ReadFromFile()
+        {
             var reeadedJsonValue = string.Empty;
 
-            //using (var writer = new StreamWriter(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Node.txt"), true))
-            //{
-            //    writer.WriteLine(a);
-            //    writer.Close();
-            //}
-
-            using (var reader = new StreamReader(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Node.txt"), true))
+            using (var reader = new StreamReader(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Node1.txt"), true))
             {
                 reeadedJsonValue = reader.ReadToEnd();
                 reader.Close();
-
             }
 
-            var k = JsonConvert.DeserializeObject(reeadedJsonValue, typeof(Node));
+            var nodes = JsonConvert.DeserializeObject<List<Node>>(reeadedJsonValue);
 
-            var boole = k.Equals(_node);
+            return nodes;
+        }
 
-            Console.WriteLine(boole.ToString());
+        private bool CreateDummyFile()
+        {
+            try
+            {
+                var list = new List<Node>();
+                list.Add(new Node());
+                list.Add(new Node());
+                list.Add(new Node());
+                list.Add(new Node());
+                list.Add(new Node());
+                list.Add(new Node());
+                list.Add(new Node());
+                list.Add(new Node());
+                list.Add(new Node());
 
+                list.ForEach(x => x.DummySet());
+
+                var willWriteString = JsonConvert.SerializeObject(list);
+
+                using (var writer = new StreamWriter(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Node1.txt"), true))
+                {
+                    writer.WriteLine(willWriteString);
+                    writer.Close();
+                }
+                return true;
+            }
+            catch (Exception)
+            {
+
+                return false;
+            }
         }
     }
 }

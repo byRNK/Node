@@ -12,6 +12,23 @@ namespace NodeGame.Node
         private int _id;
         private string _mainText;
         private string _chacoiseText;
+        private bool _isRoot;
+
+        public bool IsRoot
+        {
+            get
+            {
+                return _isRoot;
+            }
+            set
+            {
+                if (value == _isRoot)
+                {
+                    return;
+                }
+                _isRoot = value;
+            }
+        }
 
         public int Id
         {

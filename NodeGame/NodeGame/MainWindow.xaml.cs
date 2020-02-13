@@ -21,11 +21,15 @@ namespace NodeGame
     /// </summary>
     public partial class MainWindow : Window
     {
+        private NodeManager _manager;
         public MainWindow()
         {
             InitializeComponent();
 
-            new NodeManager();
+            _manager = new NodeManager();
+            var nodeList = _manager.ReadFromFile();
+
+            var model = new Model();
         }
     }
 }
