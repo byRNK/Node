@@ -1,4 +1,5 @@
 ﻿using NodeGame.Node;
+using NodeGame.View;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,15 +22,15 @@ namespace NodeGame
     /// </summary>
     public partial class MainWindow : Window
     {
-        private NodeManager _manager;
         public MainWindow()
         {
             InitializeComponent();
 
-            _manager = new NodeManager();
-            var nodeList = _manager.ReadFromFile();
+            var manager = new NodeManager();
 
-            var model = new Model(nodeList);
+            var model = new Model(manager.GetNodes());
+
+            var nodeViewModel = new NodeViewModel(model);
         }
     }
 }

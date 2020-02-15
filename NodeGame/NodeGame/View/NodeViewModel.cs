@@ -7,11 +7,12 @@ using Utility.Mvvm;
 
 namespace NodeGame.View
 {
-    public class Node : BindableBase
+    public class NodeViewModel : BindableBase
     {
-        private Node _mainNode;
+        private NodeGame.Node.Node _mainNode;
+        private List<NodeGame.Node.Node> _selectableNodes;
 
-        public Node MainNode
+        public NodeGame.Node.Node MainNode
         {
             get
             {
@@ -29,9 +30,7 @@ namespace NodeGame.View
             }
         }
 
-        private List<Node> _selectableNodes;
-
-        public List<Node> SelectableNodes
+        public List<NodeGame.Node.Node> SelectableNodes
         {
             get
             {
@@ -48,8 +47,19 @@ namespace NodeGame.View
             }
         }
 
-        public Node()
+        private Node.Model _model;
+
+        public NodeViewModel(Node.Model model)
         {
+            SelectableNodes = new List<Node.Node>();
+
+            _model = model ?? throw new NotImplementedException(nameof(model));
+
+            MainNode = _model.NodeList.First() ?? throw new NotImplementedException(nameof(MainNode));
+
+            var ids = _model.NodeList.SelectMany(x => x.ChoiseIds);
+
+            ids.ToList().ForEach(x => SelectableNodes.Add(_model.NodeList[x]));
 
         }
     }

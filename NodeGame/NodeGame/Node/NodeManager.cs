@@ -11,14 +11,15 @@ namespace NodeGame.Node
 {
     internal class NodeManager
     {
+        private List<Node> _nodes;
         public NodeManager()
         {
-            var newList = ReadFromFile();
+            _nodes = ReadFromFile();
 
-            if (newList != null &&
-                newList.Count != 0)
+            if (_nodes != null &&
+                _nodes.Count != 0)
             {
-                MessageBox.Show($"newlist sayısı: {newList.Count}");
+                MessageBox.Show($"newlist sayısı: {_nodes.Count}");
             }
 
         }
@@ -69,6 +70,11 @@ namespace NodeGame.Node
 
                 return false;
             }
+        }
+
+        public List<Node> GetNodes()
+        {
+            return _nodes;
         }
     }
 }
